@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckpoinCheckPlayer : MonoBehaviour
 {
-    public GameObject pointCanSave;
+    public Image pointCanSave;
     public Transform repawnPoint;
 
     public KeyCode saveKey = KeyCode.E;
 
     private PlayerHP playerHP;
+
+    void Awake () {
+        pointCanSave = GameObject.FindWithTag("InteractionHint").GetComponent<Image>();
+    }
+
     private void Update() 
     {
-        if(pointCanSave.activeSelf == true && Input.GetKeyDown(saveKey))
+        if(pointCanSave.enabled == true && Input.GetKeyDown(saveKey))
         {
             playerHP.respawnPoint = repawnPoint;
         }
@@ -21,7 +27,8 @@ public class CheckpoinCheckPlayer : MonoBehaviour
     {
         if(other.TryGetComponent<PlayerHP>(out PlayerHP playerHp))
         {
-            pointCanSave.SetActive(true);
+            pointCanSave.enabled = true;
+            enabled = true;
             playerHP = playerHp;
         }
     }
@@ -29,7 +36,8 @@ public class CheckpoinCheckPlayer : MonoBehaviour
     {
         if(other.TryGetComponent<PlayerHP>(out PlayerHP playerHp))
         {
-            pointCanSave.SetActive(false);
+            enabled = false;
+            pointCanSave.enabled = false;
             playerHP = playerHp;
         }
     }

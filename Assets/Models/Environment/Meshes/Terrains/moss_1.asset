@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388c9174139bd63469d4ebb5755176b5, type: 3}
+  m_Name: moss_1
+  m_EditorClassIdentifier: 
+  meshSpritesheet: {fileID: -9032557090061056480, guid: b7799a9b00c0da1418445ce6283a379f, type: 3}
+  texture: {fileID: 2800000, guid: 119464fbad693914f96ae32317544859, type: 3}
+  animationFPS: 12
+  tileSize: {x: 256, y: 256}
+  voxelSize: 0.1322314
+  newVoxelSize: 0.05

@@ -10,10 +10,13 @@ public class PlayerHP : MonoBehaviour
     public float maxHp;
     public float curHp;
 
-    public Image hpBar;
+    public HPBar hpBar;
 
     public PlayerSetGetDamage playerSetGetDamage;
 
+    public delegate void OnPlayerDeathCallback ();
+
+    public static OnPlayerDeathCallback OnPlayerDeath;
 
     public bool isBlock;
     public float shieldDefense;
@@ -22,17 +25,10 @@ public class PlayerHP : MonoBehaviour
 
     public bool isRoll;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update () {
+        if (transform.position.y < 0) {
+            Death ();
+        }
     }
 
     public void GetDamage(float damage, float force)
@@ -47,7 +43,7 @@ public class PlayerHP : MonoBehaviour
 
             curHp -= damage;
 
-            hpBar.fillAmount = curHp / maxHp;
+            hpBar.SetProgress(curHp / maxHp);
 
             if(playerSetGetDamage != null)
             {
@@ -81,7 +77,7 @@ public class PlayerHP : MonoBehaviour
         
             curHp -= damage;
 
-            hpBar.fillAmount = curHp / maxHp;
+            hpBar.SetProgress (curHp / maxHp);
             
             if(curHp <= 0)
             {
@@ -93,7 +89,9 @@ public class PlayerHP : MonoBehaviour
     public void Death()
     {
         //Destroy(gameObject);
+        if (OnPlayerDeath != null) OnPlayerDeath ();
         curHp = maxHp;
+        hpBar.SetProgress (1);
         transform.position = respawnPoint.position;
     }
 }

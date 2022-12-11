@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382cbefcc897f614381579a0fb2ecd87, type: 3}
+  m_Name: Test_Bridge
+  m_EditorClassIdentifier: 
+  tiles:
+  - meshSpritesheet: {fileID: 11400000, guid: a1c9175c83dec804ab143cb1eb5bd7b6, type: 2}
+    hitbox: {fileID: 11400000, guid: 263bf936a7157c14ebb91828e380ebd7, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: caa9edb4018b25d49a41153f3c1c4659, type: 2}
+    hitbox: {fileID: 11400000, guid: 263bf936a7157c14ebb91828e380ebd7, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 11.77, y: 0.01, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  bounds:
+    m_Center: {x: 5.8599997, y: 0.055, z: 0}
+    m_Extent: {x: 12.16, y: 0.055, z: 6.25}

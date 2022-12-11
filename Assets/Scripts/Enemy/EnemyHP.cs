@@ -17,6 +17,13 @@ public class EnemyHP : MonoBehaviour
 
     [Header("ComeBack")]
     public EnemyMovement enemyAi;
+
+    private Vector3 origPosition;
+
+    void Awake () {
+        origPosition = transform.position;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +71,15 @@ public class EnemyHP : MonoBehaviour
         //FallAtHit
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("FallAtHit") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.95f)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            PlayerHP.OnPlayerDeath += Respawn;
         }
+    }
+
+    public void Respawn () {
+        transform.position = origPosition;
+        curHp = maxHp;
+        gameObject.SetActive(true);
+        PlayerHP.OnPlayerDeath -= Respawn;
     }
 }

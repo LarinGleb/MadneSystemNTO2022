@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
+    public float maxUpdateDistance = 30;
+
     public float speed = 3f;
     public float walkSpeed = 1.5f;
 
@@ -50,6 +52,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(transform.position, target.transform.position) > maxUpdateDistance) return;
         if(isGetHit == false)
         {
             CheckAttackState();

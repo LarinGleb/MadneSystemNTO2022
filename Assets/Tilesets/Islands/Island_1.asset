@@ -1,0 +1,342 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382cbefcc897f614381579a0fb2ecd87, type: 3}
+  m_Name: Island_1
+  m_EditorClassIdentifier: 
+  tiles:
+  - meshSpritesheet: {fileID: 11400000, guid: a1c9175c83dec804ab143cb1eb5bd7b6, type: 2}
+    hitbox: {fileID: 11400000, guid: 263bf936a7157c14ebb91828e380ebd7, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 2.09, y: 1.1, z: 2.36}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 99d03a45382e9284d89ab67f4d7e3e73, type: 2}
+    hitbox: {fileID: 11400000, guid: 032f697dc8bed3b4aa2be16134da121c, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 8.17, y: 0.08000004, z: -0.14999999}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: beb92ab570814c24a8b4141c683b3236, type: 2}
+    hitbox: {fileID: 11400000, guid: a2ebb90ea204562469f77e0b5b763f9d, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 2.3, y: 0.08000004, z: -4.6899996}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 81e21887c694d5345a47f7c2b6c3bd99, type: 2}
+    hitbox: {fileID: 11400000, guid: a2ebb90ea204562469f77e0b5b763f9d, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: -4.2999997, y: 0.16000003, z: 3.1399999}
+    rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  - meshSpritesheet: {fileID: 11400000, guid: 205e75503bd88504cbbcf56bc8e85914, type: 2}
+    hitbox: {fileID: 11400000, guid: 6b063af68c952344f8919915a0906b47, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: -3.43, y: 0.758, z: -2.93}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 99d03a45382e9284d89ab67f4d7e3e73, type: 2}
+    hitbox: {fileID: 11400000, guid: 032f697dc8bed3b4aa2be16134da121c, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 4.19, y: -0.09000003, z: 8.59}
+    rotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  - meshSpritesheet: {fileID: 11400000, guid: 99d03a45382e9284d89ab67f4d7e3e73, type: 2}
+    hitbox: {fileID: 11400000, guid: 032f697dc8bed3b4aa2be16134da121c, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 8.17, y: -0.03999996, z: 3.26}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: a4ffb1b474025534aa936bc2c716a883, type: 2}
+    hitbox: {fileID: 11400000, guid: 783c18cf356ef3d4bb1b5a8848db1368, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 0
+    animationSpeed: 0
+    position: {x: 4.4500003, y: 0.9100001, z: 1.8399999}
+    rotation: {x: 0, y: 0.9127986, z: 0, w: 0.40841022}
+  - meshSpritesheet: {fileID: 11400000, guid: af95c3c4971d0d443beae676eff37a4f, type: 2}
+    hitbox: {fileID: 11400000, guid: a63516f5c2d2a8149a3332e3f5685140, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: 5.887, y: 1.1420001, z: 0.050000012}
+    rotation: {x: 0, y: 0.9127986, z: 0, w: 0.40841022}
+  - meshSpritesheet: {fileID: 11400000, guid: af95c3c4971d0d443beae676eff37a4f, type: 2}
+    hitbox: {fileID: 11400000, guid: a63516f5c2d2a8149a3332e3f5685140, type: 2}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: -2.1230001, y: 1.38, z: 3.355}
+    rotation: {x: 0, y: 0.09758294, z: 0, w: 0.9952274}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -0.14000005, y: 1.12, z: 4.73}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -0.14000005, y: 1.08, z: 3.3}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -0.22999996, y: 1.12, z: 6.3500004}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -0.24999994, y: 1.12, z: 1.23}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: 5.7190003, y: 1.12, z: 2.371}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 1
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: 3.8279998, y: 1.12, z: 3.9609997}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 0
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: 4.11, y: 1.12, z: 0.5}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 5.39, y: 1.1, z: 0.82}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 1
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 4.57, y: 0.97, z: 5.48}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 1
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 5.18, y: 0.75, z: 5.32}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 4.367, y: 0.972, z: 5.7990003}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 5.421, y: 0.972, z: 5.6720004}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 5.7000003, y: 0.972, z: 5.05}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 0.3
+    position: {x: -4.37, y: 1.4000001, z: 5.2400002}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 1
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -2.5000002, y: 1.77, z: 5.02}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 1
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -4.7799997, y: 1.98, z: 1.1200001}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 1
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 5.347, y: 1.8239999, z: -5.5369997}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9e002669ba272734eb8a1fa16d90ad06, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 0.3
+    position: {x: 5.38, y: 1.8140001, z: -5.96}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 7885807d2df5cfd4a8eacc6d2d613e46, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 1
+    variationY: 2
+    type: 2
+    animationSpeed: 0
+    position: {x: -2.49, y: 1.12, z: -0.39}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9dbecae483b2862469f758a664663c7d, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 3
+    position: {x: 1.0699999, y: 1.6700001, z: -0.01999998}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9dbecae483b2862469f758a664663c7d, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 3
+    position: {x: 3.8999999, y: 1.6700001, z: 1.99}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9dbecae483b2862469f758a664663c7d, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 3
+    position: {x: 1.3299999, y: 1.6700001, z: 6.1600003}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9dbecae483b2862469f758a664663c7d, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 3
+    position: {x: -5.79, y: 1.6700001, z: 2.75}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 11400000, guid: 9dbecae483b2862469f758a664663c7d, type: 2}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 0}
+    variationX: 2
+    variationY: 0
+    type: 3
+    animationSpeed: 3
+    position: {x: -0.87, y: 1.6700001, z: -0.9}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - meshSpritesheet: {fileID: 0}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 11400000, guid: 1b10bf200590a7f46a299a28c327e73e, type: 2}
+    variationX: 1
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: 0.57, y: 2.22, z: 5.1800003}
+    rotation: {x: 0, y: 0.09758294, z: 0, w: 0.9952274}
+  - meshSpritesheet: {fileID: 0}
+    hitbox: {fileID: 0}
+    spawnPool: {fileID: 11400000, guid: 1b10bf200590a7f46a299a28c327e73e, type: 2}
+    variationX: 1
+    variationY: 0
+    type: 2
+    animationSpeed: 0
+    position: {x: 2.1899998, y: 2.22, z: 0.87000006}
+    rotation: {x: 0, y: 0.09758294, z: 0, w: 0.9952274}
+  bounds:
+    m_Center: {x: -0.03999996, y: 1.8920001, z: -0.024999619}
+    m_Extent: {x: 9.56, y: 1.9820001, z: 9.965}
