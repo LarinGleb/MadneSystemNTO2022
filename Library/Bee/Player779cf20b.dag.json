@@ -1408,7 +1408,11 @@
     {
       "Annotation": "WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info",
       "ActionType": "WriteTextFile",
+<<<<<<< HEAD
       "WriteTextFilePayload": "DefaultCompany\nDarkRus",
+=======
+      "WriteTextFilePayload": "MadneSystemCooperation\nDarkRus",
+>>>>>>> f93cfc19 (A)
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info"
