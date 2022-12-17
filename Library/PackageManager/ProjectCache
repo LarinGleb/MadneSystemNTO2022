@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638063427816541232
-    m_Hash: 280970926
+      ticks: 638068883823839483
+    m_Hash: 1198307109
   m_LockFileStatus:
     m_FilePath: D:/Stepan/projects/DarkRus/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638063427817001122
-    m_Hash: 1932500909
+      ticks: 638068883823849517
+    m_Hash: 1468246278
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
