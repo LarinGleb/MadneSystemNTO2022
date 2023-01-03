@@ -1,4 +1,6 @@
 Logs/
+!Library/ScriptAssemblies/
+!Library/BuildSettings/
 Library/
 obj/
 Temp/
