@@ -2,7 +2,7 @@
 
 public class Jump : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    private Rigidbody rb;
     public float jumpStrength = 2;
     public event System.Action Jumped;
 
@@ -20,7 +20,7 @@ public class Jump : MonoBehaviour
     void Awake()
     {
         // Get rigidbody.
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         if(animator == null)
         {
@@ -34,7 +34,7 @@ public class Jump : MonoBehaviour
         if (Input.GetButtonDown("Jump") && (!groundCheck || groundCheck.isGrounded))
         {
             animator.SetBool("isJump", true);
-            rigidbody.AddForce(Vector3.up * 100 * jumpStrength);
+            rb.AddForce(Vector3.up * 100 * jumpStrength);
             
             Jumped?.Invoke();
             

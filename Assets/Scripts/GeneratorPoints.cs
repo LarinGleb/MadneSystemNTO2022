@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.AI.Navigation;
 using System;
 using Random = System.Random;
+
 public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
 {
     [Header("Generate points for island")]
@@ -16,37 +17,23 @@ public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
     [Range(200, 400)]
     [SerializeField] private int _MinY;
     [Range(400, 1000)]
-    [SerializeField] private int _MaxY;
-
-    public float minimalDistance;
-    
+    [SerializeField] private int _MaxY;    
 
     [Header("Need variables for generator")]
     [SerializeField] private int _Seed;
-    [SerializeField] GameObject _PrefabPoint;
     [SerializeField] bool _DebugMode = false;
+    public float minimalDistance;
 
-    [Header("Generate size for island")]
-    [Range(20, 40)]
-    [SerializeField] private int _MinSizeIsland;
-    [Range(40, 80)]
-    [SerializeField] private int _MaxSizeIsland;
-
-    [SerializeField] private GameObject _islandPrefab;
     [SerializeField] private GameObject _game;
-    [SerializeField] private GameObject _brigd;
 
     public List<Tileset> islands;
     public GameObject tilesetPrefab;
     public GameObject bridgePrefab;
 
-    private List<GameObject> _points = new List<GameObject>();
     private List<IslandPoint> islandPoints;
     
     private Random _rndClass;
     private MovePoints _movePointsScript;
-
-    private float _waiTime;
 
     private NavMeshSurface nms;
 
@@ -65,7 +52,6 @@ public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
     private void Start() {
         _rndClass = new Random(_Seed);
         UnityEngine.Random.InitState(_Seed);
-        _movePointsScript = GetComponent<MovePoints>();
         GeneratePoints();
     }
     int max(int x, int y) {
@@ -150,7 +136,7 @@ public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
         }
         StartMovement(minimalDistance, _rndClass);
         
-        GenerateIsland();
+        if (!_DebugMode) GenerateIsland();
     }
 
     public void GenerateIsland() {
@@ -159,13 +145,12 @@ public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
         {
             GameObject island = Instantiate(tilesetPrefab, point.position, Quaternion.identity);
             island.transform.SetParent (transform);
-            //island.transform.localScale  = new Vector3(srciptIsland.SizeIsland*5, island.transform.localScale.y, srciptIsland.SizeIsland*5);
 
             TilesetController tlsc = island.GetComponent<TilesetController>();
             tlsc.tileset = islands[point.islandIndex];
             tlsc.callbackListener = this;
 
-            float min_distance = 10000000000;
+            float min_distance = float.PositiveInfinity;
             IslandPoint to = new IslandPoint();
             foreach (IslandPoint point_to in islandPoints)   {
                 if (point_to == point) continue;
@@ -189,7 +174,6 @@ public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
 
 
             bridge.transform.SetParent (transform);
-            //bridge.transform.localScale = new Vector3(min_distance, 0.1f, 1f);
             bridge.transform.localRotation = Quaternion.LookRotation((point.position - to.position).normalized);
             bridge.transform.Rotate(0, 90, 0);
 
@@ -197,6 +181,18 @@ public class GeneratorPoints : MonoBehaviour, IGenerationCallbackListener
         }
         _game.transform.position = islandPoints[0].position + new Vector3(0, 4f, 0);
     
+    }
+
+    void OnDrawGizmos () {
+        if (!_DebugMode || islandPoints.Count == 0) return;
+
+        foreach (IslandPoint point in islandPoints) {
+            Gizmos.DrawWireSphere (point.position, point.radius);
+
+            if (point.connectedTo == null) continue;
+
+            Gizmos.DrawLine (point.position, point.connectedTo.position);
+        }
     }
 
     public void OnGenerationCallback (IGenerationCallbackSender sender) {

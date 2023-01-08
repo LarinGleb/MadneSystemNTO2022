@@ -6,7 +6,7 @@ using UnityEngine;
 public class LocalGameController : MonoBehaviour
 {
     public void SwitchScene (string sceneName) {
-        StartCoroutine (MainGameController.S.SwitchScene (sceneName));
+        MainGameController.S.StartCoroutine (MainGameController.S.SwitchScene (sceneName));
     }
 
     public void Exit () {

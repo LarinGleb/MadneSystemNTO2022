@@ -5,20 +5,14 @@ using UnityEngine;
 public class MagicAttack : MonoBehaviour
 {
     public ParticleSystem attackParticle;
-    public Collider collider;
+    public Collider coll;
     public Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(Input.GetMouseButtonDown(1))
         {
-            collider.enabled = false;
+            coll.enabled = false;
             StartCoroutine(TurnOffCollider());
             animator.SetBool("isMagicAttack", true);
         }
@@ -26,11 +20,11 @@ public class MagicAttack : MonoBehaviour
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("MagicAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.4f)
         {
             attackParticle.Play();
-            collider.enabled = true;
+            coll.enabled = true;
         }
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("MagicAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
         {
-            collider.enabled = false;
+            coll.enabled = false;
             animator.SetBool("isMagicAttack", false);
         }
     }
@@ -39,7 +33,7 @@ public class MagicAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         
-        //collider.enabled = false;
+        //coll.enabled = false;
         StopCoroutine(TurnOffCollider());
         yield break;
     }

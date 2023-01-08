@@ -479,15 +479,10 @@ MonoBehaviour:
   _MaxX: 400
   _MinY: 200
   _MaxY: 400
-  minimalDistance: 0
   _Seed: 0
-  _PrefabPoint: {fileID: 135619249301120747, guid: 98c456751034d0d4ca89ce3c8bb55e5f, type: 3}
   _DebugMode: 0
-  _MinSizeIsland: 20
-  _MaxSizeIsland: 40
-  _islandPrefab: {fileID: 2472033680754662192, guid: 46dcc60adfe55894989322f22fc680dd, type: 3}
+  minimalDistance: 10
   _game: {fileID: 1720811522}
-  _brigd: {fileID: 4768698696753801299, guid: d902202d2b2de5647976c870b9c8de76, type: 3}
   islands:
   - {fileID: 11400000, guid: 4086622b609483d4fa329b37c3ee3461, type: 2}
   - {fileID: 11400000, guid: 4ef8328cde171cc49a272820c66d8ce7, type: 2}

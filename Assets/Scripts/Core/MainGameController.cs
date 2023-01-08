@@ -33,8 +33,11 @@ public class MainGameController : MonoBehaviour
         _S = this;
         GameObject screenObj = GameObject.FindWithTag ("TransitionScreen");
         transitionScreen = screenObj.GetComponent<TransitionScreen>();
-        StartCoroutine (transitionScreen.FadeOut (0.5f));
         DontDestroyOnLoad (gameObject);
+    }
+
+    void Start () {
+        StartCoroutine (transitionScreen.FadeOut (0.5f));
     }
 
     public IEnumerator SwitchScene (string sceneName) {

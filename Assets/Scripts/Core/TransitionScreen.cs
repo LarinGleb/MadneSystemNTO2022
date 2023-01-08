@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TransitionScreen : MonoBehaviour
 {
+    private float opacity;
+
     private CanvasGroup cg;
 
     void Awake () {
@@ -24,7 +26,6 @@ public class TransitionScreen : MonoBehaviour
     }
 
     public IEnumerator FadeOut (float duration) {
-        print ("out");
         StopCoroutine ("FadeIn");
         float startTime = Time.time;
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AddForceInAttack : MonoBehaviour
 {
-    public Rigidbody rigidbody;
+    public Rigidbody rb;
 
     private void Start() 
     {
-        if(rigidbody == null)
+        if(rb == null)
         {
-            rigidbody = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
         }
     }
 
@@ -20,7 +20,7 @@ public class AddForceInAttack : MonoBehaviour
         {
             thirdPersonMovement.enabled = false;
         }
-        rigidbody.AddForce(transform.forward * force, ForceMode.Impulse);
+        rb.AddForce(transform.forward * force, ForceMode.Impulse);
         //GetComponent<ThirdPersonMovement>().enabled = true;
     }
 }

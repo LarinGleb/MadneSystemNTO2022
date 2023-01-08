@@ -45,7 +45,7 @@ public class TileController : MonoBehaviour, IGenerationCallbackSender
     void Start () {
         if (tlsc == null) {
             tlsc = GetComponentInParent <TilesetEditor> ();
-            tlsc.AddTile(this);
+            if (tlsc != null) tlsc.AddTile(this);
         }
 
         transform.localPosition = tile.position;

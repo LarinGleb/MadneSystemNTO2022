@@ -4,20 +4,23 @@ using System.Collections;
 //[RequireComponent(typeof(LineRenderer))]
 public class DebugLineRender : MonoBehaviour {
     
-    private int _radius;
+    [SerializeField]
+    private float _radius;
 
-    public int RadiusIsland {
+    public float RadiusIsland {
         set {_radius = value;}
     }
 
     private LineRenderer line;
     private int segments = 50;
-    
+
     public void SetComponents() {
         line = GetComponent<LineRenderer>();
-        line.SetVertexCount(segments + 1);
+        line.positionCount = segments;
+        line.loop = true;
         line.useWorldSpace = false;
-        line.SetWidth(10, 10);
+        line.startWidth = 10;
+        line.endWidth = 10;
     }
     public void StartRender()
     {
@@ -30,12 +33,12 @@ public class DebugLineRender : MonoBehaviour {
         float x;
         float z;
         float angle = 20f;
-        for (int i = 0; i < (segments + 1); i++)
+        for (int i = 0; i < segments; i++)
         {
             x = Mathf.Sin(Mathf.Deg2Rad * angle) * _radius;
             z = Mathf.Cos(Mathf.Deg2Rad * angle) * _radius;
             line.SetPosition(i,new Vector3(x,0,z));
-            angle += (360f / segments);
+            angle += (360f / (segments + 1));
         }
     }
 

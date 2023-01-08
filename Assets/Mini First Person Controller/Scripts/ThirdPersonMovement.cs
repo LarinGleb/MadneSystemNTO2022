@@ -11,7 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float runSpeed = 9;
     public KeyCode runningKey = KeyCode.LeftShift;
 
-    Rigidbody rigidbody;
+    private Rigidbody rb;
 
     [Header("VisualRotations")]
     public float speedRotate;
@@ -30,7 +30,7 @@ public class ThirdPersonMovement : MonoBehaviour
     void Awake()
     {
         // Get the rigidbody on this.
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         myTransform = transform;
 
@@ -63,26 +63,23 @@ public class ThirdPersonMovement : MonoBehaviour
             animator.SetInteger("State", 0);
         }
 
-        if(Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0 )
-        {
-            targetMovingSpeed /= 1.4f;  //<-----------------------------------------------------при порте на мобилку замени 1.4F на поиск гипотенузы через пифагора
-        }
-
         if (speedOverrides.Count > 0)
         {
             targetMovingSpeed = speedOverrides[speedOverrides.Count - 1]();
         }
 
         // Get targetVelocity from input.
-        Vector2 targetVelocity =new Vector2( Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
+        Vector2 targetVelocity = new Vector2 (Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        targetVelocity = Vector2.ClampMagnitude (targetVelocity, 1); //усекает длину вектора до 1
+        targetVelocity *= targetMovingSpeed;
 
         
          
         // Apply movement.
-        //rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);
+        //rb.velocity = transform.rotation * new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.y);
         if(isRoll == false)
         {
-            rigidbody.velocity = cameraRotation.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y) + cameraRotation.forward * Input.GetAxis("Vertical");
+            rb.velocity = cameraRotation.rotation * new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.y) + cameraRotation.forward * Input.GetAxis("Vertical");
         }
        
     }
